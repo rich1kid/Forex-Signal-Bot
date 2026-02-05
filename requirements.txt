@@ -1,0 +1,4 @@
+requests
+pandas
+forex-python
+numpy
