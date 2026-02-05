@@ -16,8 +16,10 @@ import numpy as np
 # ------------------------------
 # Telegram Setup
 # ------------------------------
-TELEGRAM_TOKEN = "7743918782:AAFZiw3G12Y5MjZTylnqvBgrh0_rUY1GhSY"
-CHAT_ID = "7147351482"
+import os
+
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+CHAT_ID = os.environ.get("CHAT_ID")
 
 def send_telegram_signal(pair, signal, entry, sl, tp, rr, session):
     message = f"""
@@ -39,8 +41,8 @@ Session: {session}
 # ------------------------------
 # Market Data Sources
 # ------------------------------
-TWELVEDATA_API = "54549599fc6c4e018f0ca97b98473c91"
-ALPHA_API = "1A5OBUY8EABYG0EU"
+TWELVEDATA_API = os.environ.get("TWELVEDATA_API")
+ALPHA_API = os.environ.get("ALPHA_API")
 c = CurrencyRates()
 
 def fetch_twelvedata(symbol="EUR/USD"):
